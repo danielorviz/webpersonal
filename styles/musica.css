@@ -1,0 +1,35 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1.25em;
+}
+
+main article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.0625em solid #ccc; 
+    border-radius: 0.625em; 
+    margin: 0.625em; 
+    padding: 0.625em; 
+    background-color: #e7e7e7;
+    max-width: 18.75em; 
+    text-align: center;
+}
+
+main article h2, main article h3, main article p {
+    text-align: center;
+    margin: 0.625em 0; 
+}
+
+main article > img {
+    max-width: 100%;
+    max-height: 6.25em;
+    margin-bottom: 0.625em; 
+}
+
+main article section audio {
+    width: 100%; 
+    margin-top: 0.625em; 
+}

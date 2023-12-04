@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+main {
+    padding: 0 5% 0 5%;
+}
+
+main section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+
+section h2 {
+    text-align: center;
+    margin-top: 0;
+    grid-column: 1 / span 2;
+}
+
+video {
+    height: 100%;
+    max-width: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+p {
+    font-size: 16px;
+    padding: 0 3.13em 0 3.13em;
+}
+
+@media (max-width: 768px) {
+    main section {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+    }
+
+    section h2 {
+        grid-column: 1;
+    }
+
+}

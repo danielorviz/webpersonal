@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel Orviz Suárez">
+    <meta name="description" content="Página hablo sobre mí">
+    
+    <title>Mi Página Personal</title>
+    <style>
+:root {
+    --color-primario: #003366;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    margin: 0;
+}
+
+header h1 {
+    background-color: var(--color-primario);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 0.63em;
+    text-align: center;
+    padding: 0.35em;
+}
+
+section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    margin-bottom: 1.25em;
+    padding: 1.25em;
+}
+
+@media screen and (max-width: 768px) {
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0.5em 0;
+    }
+
+    section {
+        padding: 0.75em;
+    }
+}
+
+footer {
+    background-color: var(--color-primario);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+footer img {
+    border: 0;
+    width: auto;
+    height: auto;
+}
+footer p {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+}
+
+main {
+    flex: 1;
+    overflow: auto;
+}
+main > section {
+    flex-grow: 1;
+    margin: 0 1.25em 1.25em 1.25em;
+
+}
+main > article{
+    margin: 0 1.25em 1.25em 1.25em;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#contenidoFormacion, #contenidoExperiencia{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+article div section {
+    flex: 1;
+}
+article section:first-child{
+    margin-right: 0.3em;
+}
+
+section p{
+    font-size: 14px;
+}
+body > section{
+    text-align: center;
+    background-color: var(--color-primario);
+    color: #fff;
+    flex: 1;
+    padding: 0 1.25em 0 0;
+    height: 100%;
+    max-width: 11.25em;
+    border-radius: 0;
+    border: 0;
+}
+body > section h2{
+    margin-top: 2em;
+}
+body > section section{
+    text-align: left;
+    background-color: var(--color-primario);
+    border: 0em;
+    padding: 0;
+    margin-top: 3em;
+    margin-left: 5%;
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 0.63em;
+}
+ul {
+    padding: 0;
+    list-style-type: none; 
+    font-size: 12px;
+}
+ul span {
+    font-weight: bold;
+}
+li {
+    margin-top: 0.25em;
+
+}
+
+img {
+    height: auto;
+    width: 8.13em;
+}
+@media (max-width: 768px) {
+    article {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        margin-top: 2em;
+    }
+    
+    article h2 {
+        text-align: center;
+        grid-column: 1 / span 2;
+    }
+    article div{
+        display: grid;
+
+    }
+    #contenidoFormacion, #contenidoExperiencia{
+        display: grid;
+    }
+}
+
+    </style>
+<!-- Hotjar Tracking Code for WebPersonal -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3771030,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Información personal</h1>
+            <nav>
+                <a href="index.html">&#128113;Información personal</a>
+                <a href="aficiones.html">&#127940;Aficiones</a>
+                <a href="series.html">&#127916; Series</a>
+                <a href="musica.html">&#127926; Música</a>
+            </nav>
+        </header>
+
+        <section>
+            <h2>Sobre mí</h2>
+            <p> Me llamo Daniel, tengo 28 años y soy ingeniero informático del Software.
+                Vivo en Asturias, concretamente en Gijón, una ciudad costera y llena de actividades. </p>
+            <p> Desde pequeño, siempre he estado intrigado por todo lo relacionado con la tecnología y
+                por ello he llegado aquí. </p>
+            <p>Llevo trabajando, en Oviedo, 6 años, desde que me gradué. Mi día a día en el trabajo consiste
+                en resolver problemas, programar y hacer que las cosas funcionen de
+                manera eficiente.</p>
+        </section>
+        <article>
+            <h3>Formación</h3>
+            <div id="contenidoFormacion">
+                <section>
+                    <h4>Estudios</h4>
+                    <p>Estudios E.S.O. en I.E.S. Mata Jove </p>
+                    <p>Estudios Bachillerato científico I.E.S. Mata Jove</p>
+                    <p>Graduado en Ingeniería Informática del Software UNIOVI</p>
+                </section>
+                <section>
+                    <h4>Cursos</h4>
+                    <p>Introducción a la Programación en Python</p>
+                    <p>Desarrollo Web con JavaScript y HTML5</p>
+                    <p>Desarrollo aplicaciones móviles</p>
+                    <p>Guía y monitor de MountainBike</p>
+                </section>
+            </div>
+        </article>
+        <article>
+            <h3>Experiencia</h3>
+            <div id="contenidoExperiencia">
+                <section>
+                    <h4>Profesional</h4>
+                    <p>Becario desarrollo de Software (5 meses) </p>
+                    <p>Desarrollador Software (4 años)</p>
+                    <p>Responsable técnico (2años)</p>
+                </section>
+                <section>
+                    <h4>Otros</h4>
+                    <p>Jurado Joven Festival Internacional de Cine de Gijón</p>
+                    <p>Participación en hackaton</p>
+                </section>
+            </div>
+        </article>
+    </main>
+    <section>
+        <h2>Daniel Orviz Suárez</h2>
+        <img src="recursos/img/2017-05-19_004150.png" alt="Foto Daniel Orviz Suárez">
+        <section>
+            <h3>Información</h3>
+            <ul>
+                <li><span>Fecha nacimiento:</span> 14/03/1995</li>
+                <li><span>Edad:</span> 28 años</li>
+                <li><span>Residencia:</span> Gijón</li>
+            </ul>
+        </section>
+        <section>
+            <h4>Datos contacto</h4>
+
+            <ul>
+                <li><span>Email:</span> UO237512@uniovi.es</li>
+            </ul>
+        </section>
+    </section>
+</body>
+
+</html>

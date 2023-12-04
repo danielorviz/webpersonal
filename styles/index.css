@@ -1,0 +1,107 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+}
+
+main {
+    flex: 1;
+    overflow: auto;
+}
+main > section {
+    flex-grow: 1;
+    margin: 0 1.25em 1.25em 1.25em;
+
+}
+main > article{
+    margin: 0 1.25em 1.25em 1.25em;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#contenidoFormacion, #contenidoExperiencia{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+article div section {
+    flex: 1;
+}
+article section:first-child{
+    margin-right: 0.3em;
+}
+
+section p{
+    font-size: 14px;
+}
+body > section{
+    text-align: center;
+    background-color: var(--color-primario);
+    color: #fff;
+    flex: 1;
+    padding: 0 1.25em 0 0;
+    height: 100%;
+    max-width: 11.25em;
+    border-radius: 0;
+    border: 0;
+}
+body > section h2{
+    margin-top: 2em;
+}
+body > section section{
+    text-align: left;
+    background-color: var(--color-primario);
+    border: 0em;
+    padding: 0;
+    margin-top: 3em;
+    margin-left: 5%;
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 0.63em;
+}
+ul {
+    padding: 0;
+    list-style-type: none; 
+    font-size: 12px;
+}
+ul span {
+    font-weight: bold;
+}
+li {
+    margin-top: 0.25em;
+
+}
+
+img {
+    height: auto;
+    width: 8.13em;
+}
+@media (max-width: 768px) {
+    article {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        margin-top: 2em;
+    }
+    
+    article h2 {
+        text-align: center;
+        grid-column: 1 / span 2;
+    }
+    article div{
+        display: grid;
+
+    }
+    #contenidoFormacion, #contenidoExperiencia{
+        display: grid;
+    }
+}

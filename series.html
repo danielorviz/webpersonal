@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel Orviz Suárez">
+    <meta name="description" content="Página donde muestro las series que me gustan">
+    <style>
+
+:root {
+    --color-primario: #003366;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    margin: 0;
+}
+
+header h1 {
+    background-color: var(--color-primario);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 0.63em;
+    text-align: center;
+    padding: 0.35em;
+}
+
+section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    margin-bottom: 1.25em;
+    padding: 1.25em;
+}
+
+@media screen and (max-width: 768px) {
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0.5em 0;
+    }
+
+    section {
+        padding: 0.75em;
+    }
+}
+
+footer {
+    background-color: var(--color-primario);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+footer img {
+    border: 0;
+    width: auto;
+    height: auto;
+}
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+main {
+    padding: 0 5% 0 5%;
+}
+
+main section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+
+section h2 {
+    text-align: center;
+    margin-top: 0;
+    grid-column: 1 / span 2;
+}
+
+video {
+    height: 100%;
+    max-width: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+p {
+    font-size: 16px;
+    padding: 0 3.13em 0 3.13em;
+}
+
+@media (max-width: 768px) {
+    main section {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+    }
+
+    section h2 {
+        grid-column: 1;
+    }
+
+}
+    </style>
+
+    <title>Daniel Orviz Suárez - Series favoritas</title>
+<!-- Hotjar Tracking Code for WebPersonal -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3771030,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+</head>
+
+<body>
+    <header>
+        <h1>&#127916; Mis Series Favoritas &#127916;</h1>
+        <nav>
+            <a href="index.html">&#128113;Información personal</a>
+            <a href="aficiones.html">&#127940;Aficiones</a>
+            <a href="series.html">&#127916; Series</a>
+            <a href="musica.html">&#127926; Música</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Breaking Bad</h2>
+            <div id="descripcionSerie">
+                <p>Como Top 1, esta fue una de las series que mas me ha gustado, y he llegado a verla 3 veces.</p>
+                <p> Breaking Bad se trata de televisión estadounidense creada por Vince Gilligan. </p>
+                <p> La serie narra la vida
+                    de Walter White, un profesor de química que se convierte en fabricante de metanfetamina después de
+                    ser diagnosticado con cáncer.
+                </p>
+                <p>Serie de TV (2008-2013). 5 temporadas. 62 episodios. Tras cumplir 50 años, Walter White (Bryan
+                    Cranston), un profesor de química de un instituto de Albuquerque, Nuevo México, se entera de que
+                    tiene un cáncer de pulmón incurable. Casado con Skyler (Anna Gunn) y con un hijo discapacitado (RJ
+                    Mitte), la brutal noticia lo impulsa a dar un drástico cambio a su vida: decide, con la ayuda de un
+                    antiguo alumno (Aaron Paul), fabricar anfetaminas y ponerlas a la venta. Lo que pretende es liberar
+                    a su familia de problemas económicos cuando se produzca el fatal desenlace.</p>
+            </div>
+            <video controls>
+                <source src="recursos/video/breaking_bad.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <section>
+
+            <h2>Dahmer</h2>
+            <div id="descripcionSerie">
+                <p> La historia de Jeffrey Dahmer, es una miniserie sobre el asesino en serie Jeffrey Dahmer acusado
+                    de acabar con la vida de más de una decena de individuos, incluidos varios niños, en Milwaukee y
+                    Ohio, entre 1978 y 1991.</p>
+                <p>La ficción narra la complicada infancia y adolescencia de Jeffrey Dahmer. Con una madre drogadicta y
+                    un padre ausente debido a
+                    sus constantes viajes de trabajo, el pequeño Dahmer vivía en un hogar donde el afecto brillaba por
+                    su ausencia.
+                    El interés de Jeffrey por los cuerpos sin vida se inicia en su adolescencia cuando su padre le
+                    enseña a diseccionar animales muertos.
+                    Una extraña afición que le llevó a la consulta de un psicólogo, que le diagnosticó necrofilia.
+                </p>
+            </div>
+            <video controls>
+                <source src="recursos/video/dahmer.mp4" type="video/mp4">
+            </video>
+
+        </section>
+
+        <section>
+            <h2>Mi niña bonita</h2>
+            <div id="descripcionSerie">
+                <p>Esta es una de las últimas series que he visto, pero sin duda muy buena serie.</p>
+                <p>Año: 2023
+                    Lena vive en completo aislamiento junto con sus dos hijos, Hannah y Jonathan,
+                    en un hogar de alta seguridad. Comen, van al baño y se acuestan en horarios prescritos
+                    con precisión. Tan pronto como entra en la habitación, se ponen en fila para mostrar
+                    sus manos. Obedecen a todo lo que dice. Hasta que la joven logra escapar. </p>
+
+                <p> Después de un accidente automovilístico casi fatal, es hospitalizada, acompañada
+                    por Hannah. Pero el verdadero alcance de esta pesadilla se revela con la llegada de
+                    los padres de Lena al hospital esa misma noche. Han estado buscando desesperadamente
+                    a su hija desaparecida durante casi 13 años.</p>
+            </div>
+            <video controls>
+                <source src="recursos/video/dulce_ninia.mp4" type="video/mp4">
+            </video>
+        </section>
+    </main>
+    <footer>
+        <p>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="¡CSS Válido!" />
+            </a>
+        </p>
+    </footer>
+</body>
+
+</html>
