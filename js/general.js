@@ -44,7 +44,7 @@ function searchPages() {
                         resultItem.addEventListener("click", function() {
                             // Navegar hacia el elemento correspondiente en la página original
                             window.location.href = url
-                            window.onload = function() {
+                            document.addEventListener("DOMContentLoaded", function() {
 
                             var originalElement = document.querySelector(element.tagName + ":nth-child(" + (index + 1) + ")");
                             var urlActual = window.location.href;
@@ -60,7 +60,7 @@ function searchPages() {
                                 }
                             }
                             resultItem.innerHTML = "";
-                                };
+                                });
 
                         });
 
