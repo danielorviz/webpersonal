@@ -50,7 +50,7 @@ function searchPages(searchTerm) {
                     var content = element.textContent.toLowerCase();
                     if (content.includes(searchTerm)) {
                         
-                        var resultItem = element.closest("article");
+                        var resultItem = element.closest("section article");
 
   
 

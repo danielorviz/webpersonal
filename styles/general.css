@@ -61,19 +61,8 @@ nav a {
 
 }
 
-.buscador-acciones{
-    
-    display: flex;
-}
-.buscador-acciones button{
+.contenedor-buscador button{
     border: none;
-}
-
-#searchResults{
-    padding: 0.5rem;
-    position: absolute;
-    background-color: var(--color-primario);
-
 }
 
 section {
