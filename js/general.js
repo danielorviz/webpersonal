@@ -43,10 +43,25 @@ function searchPages() {
                         // Agregar un evento de clic al resultado para la navegación
                         resultItem.addEventListener("click", function() {
                             // Navegar hacia el elemento correspondiente en la página original
-                            var originalElement = document.querySelector(url + " " + element.tagName + ":nth-child(" + (index + 1) + ")");
+                            window.location.href = url
+                            window.onload = function() {
+
+                            var originalElement = document.querySelector(element.tagName + ":nth-child(" + (index + 1) + ")");
+                            var urlActual = window.location.href;
+                            console.log("URL actual:", urlActual);
+
                             if (originalElement) {
                                 originalElement.scrollIntoView({ behavior: "smooth" });
+                            }else{
+                                window.location.href = url;
+                                var originalElement_ = document.querySelector(element.tagName + ":nth-child(" + (index + 1) + ")");
+                                if (originalElement_) {
+                                    originalElement_.scrollIntoView({ behavior: "smooth" });
+                                }
                             }
+                            resultItem.innerHTML = "";
+                                };
+
                         });
 
                         // Agregar el nuevo elemento al área de resultados
