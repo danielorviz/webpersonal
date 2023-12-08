@@ -40,7 +40,7 @@ function searchPages() {
 
                         // Agregar un evento de clic al resultado para navegar a la página
                         resultItem.addEventListener("click", function() {
-                            window.location.href = url; // Navegar a la URL de la página
+                            window.location.href = "/" + url; // Navegar a la URL de la página
                         });
 
                         // Agregar el nuevo elemento al área de resultados
