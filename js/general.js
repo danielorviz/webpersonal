@@ -4,7 +4,9 @@ function searchPages() {
 
     // Limpiar resultados anteriores
     resultsContainer.innerHTML = "";
-
+    if(searchTerm === null || searchTerm === undefined || searchTerm.length===0){
+        return;
+    }
     // URLs de las páginas que quieres buscar
     var pageUrls = ["index.html", "aficiones.html"];  // Agrega las URL de tus páginas aquí
 

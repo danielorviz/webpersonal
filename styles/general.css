@@ -63,6 +63,14 @@ nav a {
     border: none;
 }
 
+#searchResults{
+    max-width: 50%;
+    justify-self: end;
+    position: relative;
+    margin-right: 2rem;
+
+}
+
 section {
     background-color: #fff;
     border: 1px solid #ddd;
