@@ -49,7 +49,10 @@ function searchPages() {
                             if (originalElement) {
                                 originalElement.classList.add("resultado");
                                 window.location.href = url+"#resultado"
-                                originalElement.classList.remove("resultado");
+                                setTimeout(function(){
+                                    originalElement.classList.remove("resultado");
+
+                                },2000);
                                 //originalElement.scrollIntoView({ behavior: "smooth" });
                             }else{
                                 window.location.href = url;
