@@ -47,13 +47,9 @@ function searchPages() {
                             var originalElement = document.querySelector(element.tagName + ":nth-child(" + (index + 1) + ")");
 
                             if (originalElement) {
-                                originalElement.classList.add("resultado");
-                                window.location.href = url+"#resultado"
-                                setTimeout(function(){
-                                    originalElement.classList.remove("resultado");
+                                window.location.href = url
 
-                                },2000);
-                                //originalElement.scrollIntoView({ behavior: "smooth" });
+                                originalElement.scrollIntoView({ behavior: "smooth" });
                             }else{
                                 window.location.href = url;
                                 var originalElement_ = document.querySelector(element.tagName + ":nth-child(" + (index + 1) + ")");
