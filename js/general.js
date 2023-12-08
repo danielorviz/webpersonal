@@ -4,9 +4,7 @@ function searchPages() {
 
     // Limpiar resultados anteriores
     resultsContainer.innerHTML = "";
-    if(searchTerm === null || searchTerm === undefined || searchTerm.length===0){
-        return;
-    }
+
     // URLs de las páginas que quieres buscar
     var pageUrls = ["index.html", "aficiones.html"];  // Agrega las URL de tus páginas aquí
 
@@ -40,13 +38,9 @@ function searchPages() {
                         // Crear contenido con resaltado y separadores
                         resultItem.innerHTML = highlightedContent + "<hr>";
 
-                        // Agregar un evento de clic al resultado para la navegación
+                        // Agregar un evento de clic al resultado para navegar a la página
                         resultItem.addEventListener("click", function() {
-                            // Navegar hacia el elemento correspondiente en la página original
-                            var originalElement = document.querySelector(url + " " + element.tagName + ":nth-child(" + (index + 1) + ")");
-                            if (originalElement) {
-                                originalElement.scrollIntoView({ behavior: "smooth" });
-                            }
+                            window.location.href = url; // Navegar a la URL de la página
                         });
 
                         // Agregar el nuevo elemento al área de resultados
