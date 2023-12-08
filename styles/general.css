@@ -56,18 +56,23 @@ nav a {
 .contenedor-buscador{
     margin: 0.5rem 1rem 0.5rem 0;
     padding: 0.2rem;
-    display: flex;
     justify-self: end;
+    position: relative;
+
 }
-.contenedor-buscador button{
+
+.buscador-acciones{
+    
+    display: flex;
+}
+.buscador-acciones button{
     border: none;
 }
 
 #searchResults{
-    max-width: 50%;
-    justify-self: end;
-    position: relative;
-    margin-right: 2rem;
+    padding: 0.5rem;
+    position: absolute;
+    background-color: var(--color-primario);
 
 }
 
