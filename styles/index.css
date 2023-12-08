@@ -2,42 +2,43 @@ html {
     height: 100%;
 }
 
-body {
-    display: flex;
-    flex-direction: row-reverse;
-    height: 100%;
-}
 
-main {
-    flex: 1;
-    overflow: auto;
-}
 main > section {
-    flex-grow: 1;
+    display: grid;
+    place-items: center;
+    text-align: justify;
+    grid-template-columns: 3fr 1fr;
     margin: 0 1.25em 1.25em 1.25em;
 
 }
-main > article{
-    margin: 0 1.25em 1.25em 1.25em;
+main > section h1{
+    grid-column: 1 / span 2;
 }
-
-article{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+main > section p{
+    padding-right: 2rem;
 }
-#contenidoFormacion, #contenidoExperiencia{
+main > section img{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    height: auto;
 }
-article div section {
-    flex: 1;
+
+
+
+main > article{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    margin: 0 1.25em 1.25em 1.25em;
+
 }
-article section:first-child{
-    margin-right: 0.3em;
+
+main > article h2{
+    grid-column: 1 / span 2;
+    text-align: center;
+    margin: 1rem 1.25em 0.4rem 1.25em;
+    
 }
+
 
 section p{
     font-size: 14px;
@@ -53,9 +54,7 @@ body > section{
     border-radius: 0;
     border: 0;
 }
-body > section h2{
-    margin-top: 2em;
-}
+
 body > section section{
     text-align: left;
     background-color: var(--color-primario);
@@ -81,27 +80,38 @@ li {
 
 }
 
-img {
-    height: auto;
-    width: 8.13em;
-}
 @media (max-width: 768px) {
-    article {
+
+    main > section {
+        display: grid;
+        place-items: center;
+        text-align: justify;
+        grid-template-columns: 1fr;
+        margin: 0 1.25em 1.25em 1.25em;
+    
+    }
+    main > section h1{
+        grid-column: 1 / span 1;
+    }
+    main > section p{
+        padding-right: 2rem;
+    }
+    main > section img{
+        width: 100%;
+        height: auto;
+    }
+
+    main > article {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
         margin-top: 2em;
     }
     
-    article h2 {
+    main > article h2 {
         text-align: center;
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 1;
     }
-    article div{
-        display: grid;
 
-    }
-    #contenidoFormacion, #contenidoExperiencia{
-        display: grid;
-    }
+    
 }
