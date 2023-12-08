@@ -2,7 +2,9 @@ html {
     height: 100%;
 }
 
-
+main {
+    display: grid;
+}
 main > section {
     display: grid;
     place-items: center;
@@ -21,7 +23,6 @@ main > section img{
     width: 100%;
     height: auto;
 }
-
 
 
 main > article{

@@ -3,6 +3,7 @@
 }
 
 body {
+    display: grid;
     font-family: Arial, sans-serif;
     text-align: justify;
     margin: 0;
@@ -52,6 +53,16 @@ nav a {
     padding: 1rem;
 }
 
+.contenedor-buscador{
+    margin: 0.5rem 1rem 0.5rem 0;
+    padding: 0.2rem;
+    display: flex;
+    justify-self: end;
+}
+.contenedor-buscador button{
+    border: none;
+}
+
 section {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -81,11 +92,11 @@ footer p {
     header {
         display: grid;
         grid-template-columns: 1fr;
+        overflow: auto;
+
                
     }
-    header nav{
-        overflow: auto;
-    }
+
     
     
     header div{
@@ -94,7 +105,7 @@ footer p {
         justify-self:  center;
     }
     
-    #a {
+    header > a {
         display: none;
     }
 }
