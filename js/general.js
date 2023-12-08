@@ -23,7 +23,20 @@ function searchPages() {
                     if (content.includes(searchTerm)) {
                         // Crear un nuevo elemento para mostrar el resultado
                         var resultItem = document.createElement("div");
-                        resultItem.textContent = content;
+
+                        // Obtener las primeras 4 palabras alrededor de la palabra buscada
+                        var words = content.split(" ");
+                        var startIndex = Math.max(0, words.indexOf(searchTerm) - 2);
+                        var endIndex = Math.min(words.length, startIndex + 4);
+                        var slicedWords = words.slice(startIndex, endIndex);
+
+                        // Resaltar la palabra buscada
+                        var highlightedContent = slicedWords.map(word => {
+                            return word.toLowerCase() === searchTerm ? `<span style="background-color: yellow;">${word}</span>` : word;
+                        }).join(" ");
+
+                        // Crear contenido con resaltado y separadores
+                        resultItem.innerHTML = highlightedContent + "<hr>";
 
                         // Agregar un evento de clic al resultado para la navegación
                         resultItem.addEventListener("click", function() {
