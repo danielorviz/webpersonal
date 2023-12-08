@@ -43,15 +43,14 @@ function searchPages() {
                         // Agregar un evento de clic al resultado para la navegación
                         resultItem.addEventListener("click", function() {
                             // Navegar hacia el elemento correspondiente en la página original
-                            window.location.href = url
-                            setTimeout(function() {
 
                             var originalElement = document.querySelector(element.tagName + ":nth-child(" + (index + 1) + ")");
-                            var urlActual = window.location.href;
-                            console.log("URL actual:", urlActual);
 
                             if (originalElement) {
-                                originalElement.scrollIntoView({ behavior: "smooth" });
+                                originalElement.classList.add("resultado");
+                                window.location.href = url+"#resultado"
+                                originalElement.classList.remove("resultado");
+                                //originalElement.scrollIntoView({ behavior: "smooth" });
                             }else{
                                 window.location.href = url;
                                 var originalElement_ = document.querySelector(element.tagName + ":nth-child(" + (index + 1) + ")");
@@ -60,7 +59,6 @@ function searchPages() {
                                 }
                             }
                             resultItem.innerHTML = "";
-                                });
 
                         });
 
