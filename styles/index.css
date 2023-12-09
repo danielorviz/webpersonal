@@ -2,6 +2,10 @@ html {
     height: 100%;
 }
 
+nav a:nth-child(1) {
+    background-color: var(--color-primario-hover);
+}
+
 main {
     display: grid;
 }
