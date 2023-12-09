@@ -1,11 +1,7 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
     var searchTerm = getSearchTermFromURL();
 
-    // Si hay un término de búsqueda, establecerlo en el campo de búsqueda y realizar la búsqueda
     if (searchTerm) {
-        console.log(searchTerm);
         doSearch(searchTerm);
     }
 
@@ -28,13 +24,11 @@ function getSearchTermFromURL() {
 function doSearch(searchTerm) {
     var resultsContainer = document.getElementsByTagName("main")[0];
 
-    // Limpiar resultados anteriores
     resultsContainer.innerHTML = "";
     if (searchTerm === null || searchTerm === undefined || searchTerm.length === 0) {
         return;
     }
-    // URLs de las páginas que quieres buscar
-    var pageUrls = ["index.html", "aficiones.html", "musica.html", "series.html"];  // Agrega las URL de tus páginas aquí
+    var pageUrls = ["index.html", "aficiones.html", "musica.html", "series.html"]; 
 
     // Realizar búsqueda en cada página
     pageUrls.forEach(function (url) {
@@ -44,12 +38,13 @@ function doSearch(searchTerm) {
                 var parser = new DOMParser();
                 var doc = parser.parseFromString(html, 'text/html');
 
-                // Recorrer elementos de la página y buscar término
+                // Busco todos los parrafos del html para buscar palabras
                 var elements = doc.querySelectorAll("p");
                 elements.forEach(function (element, index) {
                     var content = element.textContent.toLowerCase();
 
                     if (searchTerm.includes(" ")) {
+                        resultsContainer.innerHTML = "";
                         var terminos = searchTerm.split(" ");
                         if (terminos.every(t => content.includes(t))) {
 
@@ -60,8 +55,10 @@ function doSearch(searchTerm) {
                         }
 
                     } else if (content.includes(searchTerm)) {
+                        resultsContainer.innerHTML = "";
                         var resultItem = element.closest("section");
                         resultsContainer.appendChild(resultItem);
+
                     }
                 });
                 if (resultsContainer.children.length === 0) {
