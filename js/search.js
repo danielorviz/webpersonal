@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Si hay un término de búsqueda, establecerlo en el campo de búsqueda y realizar la búsqueda
     if (searchTerm) {
         console.log(searchTerm);
-        searchPages(searchTerm);
+        doSearch(searchTerm);
     }
 
 
@@ -25,12 +25,12 @@ function getSearchTermFromURL() {
     return searchTerm;
 }
 
-function searchPages(searchTerm) {
+function doSearch(searchTerm) {
     var resultsContainer = document.getElementsByTagName("main")[0];
 
     // Limpiar resultados anteriores
     resultsContainer.innerHTML = "";
-    if(searchTerm === null || searchTerm === undefined || searchTerm.length===0){
+    if (searchTerm === null || searchTerm === undefined || searchTerm.length === 0) {
         return;
     }
     // URLs de las páginas que quieres buscar
@@ -48,23 +48,32 @@ function searchPages(searchTerm) {
                 var elements = doc.querySelectorAll("p");
                 elements.forEach(function (element, index) {
                     var content = element.textContent.toLowerCase();
-                    if (content.includes(searchTerm)) {
-                        
-                        var resultItem = element.closest("section, article");
 
-  
-                        resultsContainer.innerHTML ="";
+                    if (searchTerm.contains(" ")) {
+                        var terminos = searchTerm.split(" ");
+                        terminos.forEach(t => {
+                            if (content.includes(t)) {
+                                var resultItem = element.closest("section");
+                                if (!resultsContainer.contains(resultItem)) {
+                                    resultsContainer.appendChild(resultItem);
+                                }
+                            }
+                        });
+                        
+                    } else if (content.includes(searchTerm)) {
+                        var resultItem = element.closest("section");
                         resultsContainer.appendChild(resultItem);
                     }
                 });
+                if (resultsContainer.children.length === 0) {
+                    var noResultsMessage = document.createElement("div");
+                    noResultsMessage.textContent = "No se encontraron resultados.";
+                    resultsContainer.appendChild(noResultsMessage);
+                }
             })
             .catch(error => console.error("Error al cargar la página", error));
-            
+
     });
-    if (resultsContainer.children.length === 0) {
-        var noResultsMessage = document.createElement("div");
-        noResultsMessage.textContent = "No se encontraron resultados.";
-        resultsContainer.appendChild(noResultsMessage);
-    }
     
+
 }
