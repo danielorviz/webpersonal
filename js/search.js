@@ -51,15 +51,14 @@ function doSearch(searchTerm) {
 
                     if (searchTerm.includes(" ")) {
                         var terminos = searchTerm.split(" ");
-                        terminos.forEach(t => {
-                            if (content.includes(t)) {
-                                var resultItem = element.closest("section");
-                                if (!resultsContainer.contains(resultItem)) {
-                                    resultsContainer.appendChild(resultItem);
-                                }
+                        if (terminos.every(t => content.includes(t))) {
+
+                            var resultItem = element.closest("section");
+                            if (!resultsContainer.contains(resultItem)) {
+                                resultsContainer.appendChild(resultItem);
                             }
-                        });
-                        
+                        }
+
                     } else if (content.includes(searchTerm)) {
                         var resultItem = element.closest("section");
                         resultsContainer.appendChild(resultItem);
@@ -74,6 +73,6 @@ function doSearch(searchTerm) {
             .catch(error => console.error("Error al cargar la página", error));
 
     });
-    
+
 
 }
