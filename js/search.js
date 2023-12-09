@@ -34,7 +34,7 @@ function doSearch(searchTerm) {
         return;
     }
     // URLs de las páginas que quieres buscar
-    var pageUrls = ["index.html", "aficiones.html"];  // Agrega las URL de tus páginas aquí
+    var pageUrls = ["index.html", "aficiones.html", "musica.html", "series.html"];  // Agrega las URL de tus páginas aquí
 
     // Realizar búsqueda en cada página
     pageUrls.forEach(function (url) {
@@ -49,7 +49,7 @@ function doSearch(searchTerm) {
                 elements.forEach(function (element, index) {
                     var content = element.textContent.toLowerCase();
 
-                    if (searchTerm.contains(" ")) {
+                    if (searchTerm.includes(" ")) {
                         var terminos = searchTerm.split(" ");
                         terminos.forEach(t => {
                             if (content.includes(t)) {
