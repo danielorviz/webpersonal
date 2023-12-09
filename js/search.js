@@ -50,22 +50,21 @@ function searchPages(searchTerm) {
                     var content = element.textContent.toLowerCase();
                     if (content.includes(searchTerm)) {
                         
-                        var resultItem = element.closest("section article");
+                        var resultItem = element.closest("section, article");
 
   
-
-                        // Agregar el nuevo elemento al área de resultados
+                        resultsContainer.innerHTML ="";
                         resultsContainer.appendChild(resultItem);
                     }
                 });
             })
             .catch(error => console.error("Error al cargar la página", error));
+            
     });
-
-    // Mostrar un mensaje si no se encuentran resultados
     if (resultsContainer.children.length === 0) {
         var noResultsMessage = document.createElement("div");
         noResultsMessage.textContent = "No se encontraron resultados.";
         resultsContainer.appendChild(noResultsMessage);
     }
+    
 }
