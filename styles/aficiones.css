@@ -10,6 +10,10 @@ article {
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     margin-top: 2em;
+    background-color: #e7e7e7;
+    border: 0.0625em solid #ccc; 
+    border-radius: 0.625em; 
+    padding: 0.625em; 
 }
 
 h2 {
