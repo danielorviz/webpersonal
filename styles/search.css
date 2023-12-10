@@ -2,7 +2,7 @@ main {
     padding: 0 5% 0 5%;
 }
 
-section {
+section, article{
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;

@@ -39,7 +39,7 @@ function doSearch(searchTerm) {
                 var doc = parser.parseFromString(html, 'text/html');
 
                 // Busco todos los parrafos del html para buscar palabras
-                var elements = doc.querySelectorAll("p");
+                var elements = doc.querySelectorAll("p, h1, h2, h3, h4");
                 elements.forEach(function (element, index) {
                     var content = element.textContent.toLowerCase();
 
@@ -47,14 +47,14 @@ function doSearch(searchTerm) {
                         var terminos = searchTerm.split(" ");
                         if (terminos.every(t => content.includes(t))) {
 
-                            var resultItem = element.closest("section");
+                            var resultItem = element.closest("article, section");
                             if (!resultsContainer.contains(resultItem)) {
                                 resultsContainer.appendChild(resultItem);
                             }
                         }
 
                     } else if (content.includes(searchTerm)) {
-                        var resultItem = element.closest("section");
+                        var resultItem = element.closest("article, section");
                         resultsContainer.appendChild(resultItem);
 
                     }
