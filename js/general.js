@@ -3,6 +3,6 @@ function searchPages() {
     if (searchTerm === null || searchTerm === undefined || searchTerm.length === 0) {
         return;
     }
-    window.location.href = "search.html?termino="+searchTerm;
+    window.location.href = "busqueda.html?termino="+searchTerm;
 
 }
