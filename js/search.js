@@ -38,34 +38,35 @@ function realizarBusqueda(terminoAbuscar) {
     }
     var paginasBusqueda = ["index.html", "aficiones.html", "musica.html", "series.html"];
 
-    // Realizar búsqueda en cada página
-    var peticiones = paginasBusqueda.map(function (url) {
-        return fetch(url)
-            .then(response => response.text())
-            .then(html => {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(html, 'text/html');
+    // Preparo todas las peticiones para realizar búsqueda en cada página
+    var peticiones = paginasBusqueda.map(async function (url) {
+        try {
+            const response = await fetch(url);
+            const html = await response.text();
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, 'text/html');
 
-                // Busco todos los parrafos o titulos del html para buscar palabras
-                var elementosHtml = doc.querySelectorAll("p, h1, h2, h3, h4");
-                var resultadosBusqueda = [];
-                elementosHtml.forEach(function (element) {
-                    var content = element.textContent.toLowerCase();
+            // Busco todos los parrafos o titulos del html para buscar palabras
+            var elementosHtml = doc.querySelectorAll("p, h1, h2, h3, h4");
+            var resultadosBusqueda = [];
+            elementosHtml.forEach(function (element) {
+                var content = element.textContent.toLowerCase();
 
-                    if (contieneTexto(content, terminoAbuscar)) {
-                        var resultItem = element.closest("article, section");
-                        if (resultItem && !resultadosBusqueda.includes(resultItem)) {
-                            resultadosBusqueda.push(resultItem);
-                        }
+                if (contieneTexto(content, terminoAbuscar)) {
+                    var resultItem = element.closest("article, section");
+                    if (resultItem && !resultadosBusqueda.includes(resultItem)) {
+                        var regex = new RegExp(terminoAbuscar, "g");
+                        var contenidoResaltado = resultItem.innerHTML.replace(regex,'<span style="background-color: yellow;">$&</span>');
+                        resultItem.innerHTML = contenidoResaltado;
+                        resultadosBusqueda.push(resultItem);
                     }
-                });
-                return resultadosBusqueda;
-
-            })
-            .catch(error => {
-                console.error("Error al cargar la página", error);
-                return [];
+                }
             });
+            return resultadosBusqueda;
+        } catch (error) {
+            console.error("Error al cargar la página", error);
+            return [];
+        }
 
     });
 
