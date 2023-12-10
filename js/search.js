@@ -55,7 +55,7 @@ function doSearch(searchTerm) {
                         }
 
                     } else if (content.includes(searchTerm)) {
-                        var resultItem = element.indluces("article, section");
+                        var resultItem = element.includes("article, section");
                         if (resultItem && !resultadosBusqueda.contains(resultItem)) {
                             resultadosBusqueda.push(resultItem);
                         }
