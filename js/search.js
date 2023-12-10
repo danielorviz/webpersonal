@@ -73,9 +73,11 @@ function doSearch(searchTerm) {
     });
 
     Promise.all(peticiones)
-        .then(function (resultados){
-            resultados.forEach( function (elemento){
-                resultsContainer.appendChild(elemento);
+        .then(function (resultado){
+            resultado.forEach( function (elementos){
+                elementos.forEach( function (elemento){
+                    resultsContainer.appendChild(elemento);
+                });
             });
         }).catch(error => console.error("Error al mostrar el resultado", error))
         .finally(()=>{
