@@ -1,69 +1,66 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var searchTerm = getSearchTermFromURL();
+    var terminoABuscar = getTerminoBusqueda();
 
-    if (searchTerm) {
-        doSearch(searchTerm);
+    if (terminoABuscar) {
+        realizarBusqueda(terminoABuscar);
     }
 
 
 });
 
-// Obtener el término de búsqueda de los parámetros de la URL
-function getSearchTermFromURL() {
+// Obtengo el término de búsqueda de los parámetros de la URL
+function getTerminoBusqueda() {
     var currentURL = window.location.search;
-
-    // Crear un objeto URLSearchParams a partir de la URL
     var urlParams = new URLSearchParams(currentURL);
 
-    // Obtener el valor del parámetro 'termino'
-    var searchTerm = urlParams.get('termino');
+    var terminoABuscar = urlParams.get('termino');
 
-    return searchTerm;
+    return terminoABuscar;
+}
+function contieneTexto(contenido,texto) {
+    if (texto.includes(" ")) {
+        var terminos = texto.split(" ");
+        if (terminos.every(t => contenido.includes(t))) {
+            return true;
+        }
+    } else if (contenido.includes(texto)) {
+        return true;
+    }
+    return false;
 }
 
-function doSearch(searchTerm) {
-    var resultsContainer = document.getElementsByTagName("main")[0];
+function realizarBusqueda(terminoAbuscar) {
+    var mainContainer = document.getElementsByTagName("main")[0];
 
-    resultsContainer.innerHTML = "";
-    if (searchTerm === null || searchTerm === undefined || searchTerm.length === 0) {
-        return;
+    mainContainer.innerHTML = "";
+    if (terminoAbuscar === null || terminoAbuscar === undefined || terminoAbuscar.length === 0) {
+        return ;
     }
-    var pageUrls = ["index.html", "aficiones.html", "musica.html", "series.html"]; 
+    var paginasBusqueda = ["index.html", "aficiones.html", "musica.html", "series.html"];
 
     // Realizar búsqueda en cada página
-    var peticiones = pageUrls.map(function (url) {
+    var peticiones = paginasBusqueda.map(function (url) {
         return fetch(url)
             .then(response => response.text())
             .then(html => {
                 var parser = new DOMParser();
                 var doc = parser.parseFromString(html, 'text/html');
 
-                // Busco todos los parrafos del html para buscar palabras
+                // Busco todos los parrafos o titulos del html para buscar palabras
                 var elementosHtml = doc.querySelectorAll("p, h1, h2, h3, h4");
                 var resultadosBusqueda = [];
-                elementosHtml.forEach(function (element, index) {
+                elementosHtml.forEach(function (element) {
                     var content = element.textContent.toLowerCase();
 
-                    if (searchTerm.includes(" ")) {
-                        var terminos = searchTerm.split(" ");
-                        if (terminos.every(t => content.includes(t))) {
-
-                            var resultItem = element.closest("article, section");
-                            if (resultItem && !resultadosBusqueda.includes(resultItem)) {
-                                resultadosBusqueda.push(resultItem);
-                            }
-                        }
-
-                    } else if (content.includes(searchTerm)) {
+                    if (contieneTexto(terminoAbuscar, content)) {
                         var resultItem = element.closest("article, section");
                         if (resultItem && !resultadosBusqueda.includes(resultItem)) {
                             resultadosBusqueda.push(resultItem);
                         }
-
                     }
                 });
                 return resultadosBusqueda;
-                
+
             })
             .catch(error => {
                 console.error("Error al cargar la página", error);
@@ -73,21 +70,21 @@ function doSearch(searchTerm) {
     });
 
     Promise.all(peticiones)
-        .then(function (resultado){
-            resultado.forEach( function (elementos){
-                elementos.forEach( function (elemento){
-                    resultsContainer.appendChild(elemento);
+        .then(function (resultado) {
+            resultado.forEach(function (elementos) {
+                elementos.forEach(function (elemento) {
+                    mainContainer.appendChild(elemento);
                 });
             });
         }).catch(error => console.error("Error al mostrar el resultado", error))
-        .finally(()=>{
+        .finally(() => {
 
-            if (resultsContainer.children.length === 0) {
+            if (mainContainer.children.length === 0) {
                 var noResultsMessage = document.createElement("p");
                 noResultsMessage.textContent = "No se encontraron resultados.";
-                resultsContainer.appendChild(noResultsMessage);
+                mainContainer.appendChild(noResultsMessage);
             }
-    });
-    
+        });
+
 
 }
