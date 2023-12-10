@@ -52,7 +52,7 @@ function realizarBusqueda(terminoAbuscar) {
                 elementosHtml.forEach(function (element) {
                     var content = element.textContent.toLowerCase();
 
-                    if (contieneTexto(terminoAbuscar, content)) {
+                    if (contieneTexto(content, terminoAbuscar)) {
                         var resultItem = element.closest("article, section");
                         if (resultItem && !resultadosBusqueda.includes(resultItem)) {
                             resultadosBusqueda.push(resultItem);
