@@ -20,14 +20,6 @@ section h2 {
     grid-column: 1 / span 2;
 }
 
-video {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    justify-self: center;
-    align-self: center;
-}
-
 p {
     font-size: 16px;
     padding: 0 3.13em 0 3.13em;

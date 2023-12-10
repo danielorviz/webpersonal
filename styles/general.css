@@ -37,6 +37,13 @@ header img {
     display: block;
 
 }
+video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    justify-self: center;
+    align-self: center;
+}
 
 nav {
     display: flex;
