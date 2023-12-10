@@ -33,6 +33,7 @@ main article > img {
 }
 
 main article section audio {
+    display: flex;
     width: 100%; 
     margin-top: 0.625em; 
 }
