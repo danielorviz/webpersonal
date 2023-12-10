@@ -55,9 +55,6 @@ function realizarBusqueda(terminoAbuscar) {
                 if (contieneTexto(content, terminoAbuscar)) {
                     var resultItem = element.closest("article, section");
                     if (resultItem && !resultadosBusqueda.includes(resultItem)) {
-                        var regex = new RegExp('(?:\\b|[^\\w"]|^)' + terminoAbuscar + '(?=(?:(?:[^"]*"){2})*[^"]*$)', 'gi');
-                        var contenidoResaltado = resultItem.innerHTML.replace(regex,'<span style="background-color: yellow;">$&</span>');
-                        resultItem.innerHTML = contenidoResaltado;
                         resultadosBusqueda.push(resultItem);
                     }
                 }
