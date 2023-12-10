@@ -40,7 +40,6 @@ function doSearch(searchTerm) {
 
                 // Busco todos los parrafos del html para buscar palabras
                 var elements = doc.querySelectorAll("p");
-                resultsContainer.innerHTML = "";
                 elements.forEach(function (element, index) {
                     var content = element.textContent.toLowerCase();
 
@@ -60,15 +59,17 @@ function doSearch(searchTerm) {
 
                     }
                 });
+                
+            })
+            .catch(error => console.error("Error al cargar la página", error))
+            .finally(()=>{
                 if (resultsContainer.children.length === 0) {
                     var noResultsMessage = document.createElement("div");
                     noResultsMessage.textContent = "No se encontraron resultados.";
                     resultsContainer.appendChild(noResultsMessage);
                 }
-            })
-            .catch(error => console.error("Error al cargar la página", error));
-
+        });
     });
-
+    
 
 }
