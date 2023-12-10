@@ -40,11 +40,11 @@ function doSearch(searchTerm) {
 
                 // Busco todos los parrafos del html para buscar palabras
                 var elements = doc.querySelectorAll("p");
+                resultsContainer.innerHTML = "";
                 elements.forEach(function (element, index) {
                     var content = element.textContent.toLowerCase();
 
                     if (searchTerm.includes(" ")) {
-                        resultsContainer.innerHTML = "";
                         var terminos = searchTerm.split(" ");
                         if (terminos.every(t => content.includes(t))) {
 
@@ -55,7 +55,6 @@ function doSearch(searchTerm) {
                         }
 
                     } else if (content.includes(searchTerm)) {
-                        resultsContainer.innerHTML = "";
                         var resultItem = element.closest("section");
                         resultsContainer.appendChild(resultItem);
 
