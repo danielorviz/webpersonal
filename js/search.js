@@ -49,13 +49,13 @@ function doSearch(searchTerm) {
                         if (terminos.every(t => content.includes(t))) {
 
                             var resultItem = element.closest("article, section");
-                            if (resultItem && !resultadosBusqueda.contains(resultItem)) {
+                            if (resultItem && !resultadosBusqueda.includes(resultItem)) {
                                 resultadosBusqueda.push(resultItem);
                             }
                         }
 
                     } else if (content.includes(searchTerm)) {
-                        var resultItem = element.closest("article, section");
+                        var resultItem = element.indluces("article, section");
                         if (resultItem && !resultadosBusqueda.contains(resultItem)) {
                             resultadosBusqueda.push(resultItem);
                         }
