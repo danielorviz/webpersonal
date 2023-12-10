@@ -2,7 +2,21 @@ main {
     padding: 0 5% 0 5%;
 }
 
-section, article{
+article {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    border: 0.0625em solid #ccc; 
+    border-radius: 0.625em; 
+    margin: 0.625em; 
+    padding: 0.625em; 
+    background-color: #e7e7e7;
+    max-width: 25rem;
+    text-align: center;
+
+}
+
+section {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
