@@ -83,6 +83,10 @@ nav a:hover{
 .contenedor-buscador button{
     border: none;
 }
+.contenedor-buscador label{
+    font-size: 12px;
+}
+
 button:hover {
     cursor: pointer;
 }
