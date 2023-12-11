@@ -4,5 +4,6 @@ function searchPages() {
         return;
     }
     window.location.href = "busqueda.html?termino="+searchTerm;
+    return false;
 
 }
