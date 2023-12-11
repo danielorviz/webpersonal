@@ -24,8 +24,10 @@
         </nav>
     </header>
     <div class="contenedor-buscador">
-        <input title="Busqueda" id="search" type="text" placeholder="Buscar">
-        <button onclick="searchPages()">&#128269;</button>
+        <form onsubmit="javascript:return searchPages()">
+            <input title="Busqueda" id="search" type="text" placeholder="Buscar">
+            <button type="submit">&#128269;</button>
+        </form>
     </div>
     <main>
         <h1>Mis series favoritas</h1>
